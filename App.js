@@ -18,11 +18,11 @@ const BusinesCard = () =>{
         </View>
 
         <View style={styles.infoContainer}>
-          <Text style={[styles.texts, {fontSize:28,fontWeight:"bold"}]}>Joshua Mills</Text>
+          <Text style={[styles.texts, {fontSize:30,fontWeight:"bold"}]}>Joshua Mills</Text>
 
           <Text style={[styles.texts, {fontSize:14}]}>React Native Developer</Text>
 
-          <Text style={[styles.texts, {fontSize:13, padding:8}]}>JavaScript, React-Native, Python</Text>
+          <Text style={[styles.texts, {fontSize:12, padding:8}]}>JavaScript | React-Native | Python</Text>
 
           <View style={styles.topButtons}>
             <TouchableOpacity style={{flexDirection:"row",backgroundColor:"white", width:130,borderRadius:6,justifyContent:"center", alignItems:'center', marginRight:10}}>
@@ -49,10 +49,10 @@ const BusinesCard = () =>{
         </View>
 
         <View style={styles.navIcons}> 
-          <TouchableOpacity style={{backgroundColor:"white", width:35, height:35,marginRight:25,borderRadius:6}}><Image  source={require("./assets/twitter.png")} style={[{width:35,height:35} ]}/></TouchableOpacity>
-          <TouchableOpacity style={{backgroundColor:"white", width:35, height:35,marginRight:25,borderRadius:6}}><Image  source={require("./assets/facebook.png")} style={[{width:35,height:35} ]}/></TouchableOpacity>
-          <TouchableOpacity style={{backgroundColor:"white", width:35, height:35,borderRadius:6}}><Image  source={require("./assets/github.png")} style={[{width:35,height:35} ]}/></TouchableOpacity>
-          <TouchableOpacity style={{backgroundColor:"white", width:35, height:35,marginLeft:25,borderRadius:6}}><Image  source={require("./assets/whatsapp.png")} style={[{width:35,height:35} ]}/></TouchableOpacity>
+          <TouchableOpacity style={{backgroundColor:"white",justifyContent:"center", alignItems:"center",width:35, height:35,marginRight:25,borderRadius:6}}><Image  source={require("./assets/twitter.png")} style={[styles.icons ]}/></TouchableOpacity>
+          <TouchableOpacity style={{backgroundColor:"white",justifyContent:"center", alignItems:"center", width:35, height:35,marginRight:25,borderRadius:6}}><Image  source={require("./assets/facebook.png")} style={[styles.icons ]}/></TouchableOpacity>
+          <TouchableOpacity style={{backgroundColor:"white",justifyContent:"center", alignItems:"center", width:35, height:35,borderRadius:6}}><Image  source={require("./assets/github.png")} style={[styles.icons]}/></TouchableOpacity>
+          <TouchableOpacity style={{backgroundColor:"white",justifyContent:"center", alignItems:"center", width:35, height:35,marginLeft:25,borderRadius:6}}><Image  source={require("./assets/whatsapp.png")} style={[styles.icons]}/></TouchableOpacity>
         </View>
 
       </View>

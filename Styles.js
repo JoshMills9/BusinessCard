@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     mainContainer:{
         flex:1,
         margin:8,
-        backgroundColor: "rgba(0, 0, 20, 0.97)",
+        backgroundColor: "rgba(0, 0, 20, 0.95)",
         borderTopRightRadius:15,
         borderTopLeftRadius:15
     },
@@ -27,6 +27,8 @@ const styles = StyleSheet.create({
         flex:2,
         alignItems:'center',
         justifyContent:"flex-start",
+        borderBottomLeftRadius:15,
+        borderBottomRightRadius:20
  
     },
     texts:{
