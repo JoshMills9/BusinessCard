@@ -1,10 +1,45 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {Image, SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
+import {Alert, Image, Linking, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 
 import styles from './Styles';
 
 const BusinesCard = () =>{
+  const emailAddress = 'mailto:joshuamills105@gmail.com';
+  const phoneNumber = '+233241380745';
+  const message = "Hello, I'm Josh ";
+  const whatsappUrl = `whatsapp://send?phone=${phoneNumber}&text=${message}`;
+  const telegramUrl = `tg://resolve?domain=JoshMills_9`;
+  const twitterUrl = `twitter://user?screen_name=ZipTech1nc`;
+  const username = 'JoshMills9';
+  const githubUrl = `https://github.com/${username}/BusinessCard`;
+  const linkedinUrl = `https://www.linkedin.com/in/joshua-mills`;
+
+  const buttonHandler = (links)=>{
+    try{
+      if(links=== "Email"){
+        Linking.openURL(emailAddress)
+      }
+      else if(links === "LinkedIn"){
+        Linking.openURL(linkedinUrl)
+      }
+      else if(links === "Twitter"){
+        Linking.openURL(twitterUrl)
+      }
+      else if(links === "Telegram"){
+        Linking.openURL(telegramUrl)
+      }
+      else if(links === "Github"){
+        Linking.openURL(githubUrl)
+      }
+      else if(links === "WhatsApp"){
+        Linking.openURL(whatsappUrl)
+      }
+    }
+    catch{
+      err => Alert.alert('An error occurred', err)
+    }
+  }
 
   return(
     <SafeAreaView style={styles.container}>
@@ -22,37 +57,44 @@ const BusinesCard = () =>{
 
           <Text style={[styles.texts, {fontSize:14}]}>React Native Developer</Text>
 
-          <Text style={[styles.texts, {fontSize:12, padding:8}]}>JavaScript | React-Native | Python</Text>
+          <Text style={[styles.texts, {fontSize:10, padding:8}]}>JAVASCRIPT | REACT-NATIVE | PYTHON</Text>
 
           <View style={styles.topButtons}>
-            <TouchableOpacity style={{flexDirection:"row",backgroundColor:"white", width:130,borderRadius:6,justifyContent:"center", alignItems:'center', marginRight:10}}>
+            <TouchableOpacity onPress={()=> buttonHandler("Email")} style={{flexDirection:"row",backgroundColor:"white", width:130,borderRadius:6,justifyContent:"center", alignItems:'center', marginRight:20}}>
               <Image source={require("./assets/email.png")} style={[styles.icons, {alignSelf:"center"}]}/><Text style={{fontSize:18,paddingLeft:10,fontWeight:"bold",}}>Email</Text></TouchableOpacity>
 
-            <TouchableOpacity  style={{flexDirection:"row",backgroundColor:"#4169e1", width:130,height:40,borderRadius:6,justifyContent:"center", alignItems:'center',marginLeft:10}}>
-              <Image  source={require("./assets/social.png")} style={[styles.icons, {tintColor:"white",alignSelf:"center"}]}/><Text  style={{fontSize:18,paddingLeft:10, fontWeight:"bold", color:"white"}}>LinkendIn</Text></TouchableOpacity>
+            <TouchableOpacity  onPress={()=> buttonHandler("LinkedIn")} style={{flexDirection:"row",backgroundColor:"#4169e1", width:130,height:40,borderRadius:6,justifyContent:"center", alignItems:'center',marginLeft:20}}>
+              <Image  source={require("./assets/social.png")} style={[styles.icons, {tintColor:"white",alignSelf:"center"}]}/><Text  style={{fontSize:18,paddingLeft:10, fontWeight:"bold", color:"white"}}>LinkedIn</Text></TouchableOpacity>
           </View>
 
-          <View style={styles.para}>
+          <ScrollView contentContainerStyle={styles.para}>
             <Text style={{fontSize:18,color:"white", marginBottom:5, fontWeight:"bold", alignSelf:"flex-start"}}>About</Text>
-            <Text style={styles.texts }>
-              I'm Joshua Mills. 23 years old and am a Ghanaian.I'm an IT Technician and a software Developer.
+            <Text style={[styles.texts,{textAlign:"justify"}] }>
+              I'm Joshua Mills, a 23-year-old Ghanaian IT Technician and Software Developer. 
+              With a passion for technology, I excel in troubleshooting hardware and crafting software solutions. Beyond work, I enjoy exploring Ghana's culture and cuisine. 
+              Committed to continuous learning, I strive to make a positive impact through my IT expertise.
+              In my role as an IT Technician, I bring a meticulous approach to problem-solving, ensuring smooth operations and efficient resolution of technical issues. As a Software Developer, I thrive on the creative process of transforming ideas into functional applications, utilizing my coding skills to deliver high-quality solutions.
+
             </Text>
             
             
             <Text style={{fontSize:18,color:"white" , marginTop:20,marginBottom:5, fontWeight:"bold", alignSelf:"flex-start"}}>Interests</Text>
-            <Text style={styles.texts }>
-              I like technology.Programing,repairing, and upgrading devices.I like music and movies
+            <Text style={[styles.texts,{textAlign:"justify"}]}>
+              I'm deeply passionate about technology, with a focus on programming, repairing, and upgrading devices. 
+              I find joy in deciphering the inner workings of gadgets and breathing life into lines of code. 
+              Beyond technology, I also enjoy immersing myself in the worlds of music and movies, finding solace and inspiration in their captivating narratives and melodies.
+               My interests in technology and entertainment converge, forming a rich tapestry of experiences that define who I am.
             </Text>
           
-          </View>
+          </ScrollView>
 
         </View>
 
         <View style={styles.navIcons}> 
-          <TouchableOpacity style={{backgroundColor:"white",justifyContent:"center", alignItems:"center",width:35, height:35,marginRight:25,borderRadius:6}}><Image  source={require("./assets/twitter.png")} style={[styles.icons ]}/></TouchableOpacity>
-          <TouchableOpacity style={{backgroundColor:"white",justifyContent:"center", alignItems:"center", width:35, height:35,marginRight:25,borderRadius:6}}><Image  source={require("./assets/facebook.png")} style={[styles.icons ]}/></TouchableOpacity>
-          <TouchableOpacity style={{backgroundColor:"white",justifyContent:"center", alignItems:"center", width:35, height:35,borderRadius:6}}><Image  source={require("./assets/github.png")} style={[styles.icons]}/></TouchableOpacity>
-          <TouchableOpacity style={{backgroundColor:"white",justifyContent:"center", alignItems:"center", width:35, height:35,marginLeft:25,borderRadius:6}}><Image  source={require("./assets/whatsapp.png")} style={[styles.icons]}/></TouchableOpacity>
+          <TouchableOpacity onPress={() => buttonHandler("Twitter")} style={{backgroundColor:"white",justifyContent:"center", alignItems:"center",width:35, height:35,marginRight:38,borderRadius:6}}><Image  source={require("./assets/twitter.png")} style={[styles.icons ]}/></TouchableOpacity>
+          <TouchableOpacity onPress={() => buttonHandler("Telegram")} style={{backgroundColor:"white",justifyContent:"center", alignItems:"center", width:35, height:35,marginRight:38,borderRadius:6}}><Image  source={require("./assets/telegram.png")} style={[styles.icons ]}/></TouchableOpacity>
+          <TouchableOpacity onPress={() => buttonHandler("Github")} style={{backgroundColor:"white",justifyContent:"center", alignItems:"center", width:35, height:35,borderRadius:6}}><Image  source={require("./assets/github.png")} style={[styles.icons]}/></TouchableOpacity>
+          <TouchableOpacity onPress={() => buttonHandler("WhatsApp")} style={{backgroundColor:"white",justifyContent:"center", alignItems:"center", width:35, height:35,marginLeft:38,borderRadius:6}}><Image  source={require("./assets/whatsapp.png")} style={[styles.icons]}/></TouchableOpacity>
         </View>
 
       </View>
