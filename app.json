@@ -4,10 +4,10 @@
     "slug": "BusinessCard",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/briefcase.png",
+    "icon": "./src/Image/briefcase.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/briefcase.png",
+      "image": "./src/Image/briefcase.png",
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
@@ -19,7 +19,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/briefcase.png",
+        "foregroundImage": "./src/Image/briefcase.png",
         "backgroundColor": "#000000"
       },
       "package": "com.joshmills.BusinessCard"

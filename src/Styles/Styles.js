@@ -17,17 +17,23 @@ const styles = StyleSheet.create({
     },
 
     imgContainer: {
-      whitdth:376,
-      height:280, 
+     flex:1
       
     },
 
     infoContainer:{
-        marginTop:20,
         flex:1,
         alignItems:'center',
         justifyContent:"flex-start",
+     
     },
+
+    name:{
+        marginTop:-50,
+        alignItems:"center",
+        justifyContent:"center"
+    },
+    
     texts:{
         color: "white",
         fontSize: 15,
@@ -39,6 +45,7 @@ const styles = StyleSheet.create({
         flexDirection:"row",
         padding:15,
         justifyContent:"center",
+       
    
     },
 
@@ -48,9 +55,8 @@ const styles = StyleSheet.create({
     },
 
     para: {
-        justifyContent:"center",
-        alignItems:"center",
-        paddingTop:15,
+    
+        paddingTop:5,
         paddingLeft:35,
         paddingRight:35,
         paddingBottom:15
@@ -62,6 +68,7 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         alignItems:"center",
         padding:15,
+    
     }
 });
 
